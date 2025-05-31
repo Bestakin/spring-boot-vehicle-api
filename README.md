@@ -37,4 +37,17 @@ A Spring Boot-based microservices project that simulates a complete vehicle mana
 2. Each service has its own `application.properties` and port.
    Run them separately using IntelliJ or terminal with `mvn spring-boot:run`.
 
+---
 
+## Start the services in this order:
+
+eureka-server → localhost:8761
+pricing-service → localhost:8082
+maps-service → localhost:9191
+vehicles-api → localhost:8080
+
+---
+
+## Access API Docs and Dashboards:
+🚘 Swagger UI (Vehicles API): http://localhost:8080/swagger-ui/
+🔍 Eureka Dashboard: http://localhost:8761/
