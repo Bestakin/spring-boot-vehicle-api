@@ -93,8 +93,13 @@ public class CarService {
                     }).orElseThrow(CarNotFoundException::new);
         }
 
+        // 💡 Enrich the location with address data before saving
+        Location enrichedLocation = mapsClient.getAddress(car.getLocation());
+        car.setLocation(enrichedLocation);
+
         return repository.save(car);
     }
+
 
     /**
      * Deletes a given car by ID
